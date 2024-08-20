@@ -3,7 +3,7 @@ import Card from "../components/Card";
 import { FaAngleRight } from "react-icons/fa6";
 import { FaAngleLeft } from "react-icons/fa6";
 
-const HorizontalScrollCard = ({ data = [], heading }) => {
+const HorizontalScrollCard = ({ data = [], heading, trending }) => {
   const containerRef = useRef();
   const handleNext = () => {
     containerRef.current.scrollLeft += 300;
@@ -19,7 +19,7 @@ const HorizontalScrollCard = ({ data = [], heading }) => {
       <div className="overflow-hidden relative">
         <div
           ref={containerRef}
-          className="grid grid-cols-[repeat(auto-fit,230px)] grid-flow-col gap-5 overflow-hidden relative z-10 scroll-smooth transition-all"
+          className="grid grid-cols-[repeat(auto-fit,230px)] grid-flow-col gap-5 overflow-hidden overflow-x-scroll relative z-10 scroll-smooth transition-all scrolbar-none"
         >
           {data.map((data, index) => {
             return (
@@ -33,7 +33,7 @@ const HorizontalScrollCard = ({ data = [], heading }) => {
           })}
         </div>
 
-        <div className="absolute top-0 flex items-center w-full h-full justify-between">
+        <div className="absolute top-0 hidden lg:flex items-center w-full h-full justify-between">
           <button
             onClick={handlePrevious}
             className="bg-white p-1 rounded-full ml-1 text-black z-10"
