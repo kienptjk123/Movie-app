@@ -22,7 +22,7 @@ const Home = () => {
       />
       <HorizontalScrollCard
         data={nowPlayingData}
-        heading={"Trending"}
+        heading={"Now Playing"}
         media_type={"movie"}
       />
       <HorizontalScrollCard
